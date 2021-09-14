@@ -1,0 +1,42 @@
+MoM-1
+Title: Brain Tumore Detector
+Date: 09/14/21 13:15 to 14:10
+By : Aniv Chakravarty
+
+Attendees: Aniv, Casie, Justin
+
+Members: Aniv, Casie, Justin, Ryan, Tallon
+
+	1. Long run Overview
+  
+		a. Gantt chart updates: Milestones have been moves for clarity and dates have been fleshed out to help give us some wiggle room and hard dates.
+    
+		b. Splitting into two teams for week1:
+    
+			i. MRI and research on other possible ways team: Aniv, Ryan
+      
+			ii. Setup CNN the conventional way team: Kasie, Justin
+      
+      Note: Tallon yet to pick one
+      
+		c. Adding web as part of the dev phase
+    
+		d. Docs and resources:
+    
+        CNN: there are lots of documentation for build the CNN.
+        
+        Reasearch: Exploration phase for week 1 . MRI and research team needs to go over more resources to understand MRI scans and also find alternatives to standard CNN like                         GANS.
+        
+		e. Production testing after website development.
+    
+		f. Documentation: Keep track of what you do or find as it will be useful for the final report as well as individual contributions.
+    
+	2. Short term Overview
+  
+		a. HW3 video due Friday: It’s a video of what we're up to. Meeting on Friday.
+    
+		b. Week 1 exploration for the research team
+    
+		c. Week 1 CNN framework for the  conventional way team.
+    
+	
