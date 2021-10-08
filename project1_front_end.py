@@ -24,11 +24,20 @@ def get_path(wildcard):
 
 def run_model(filename) -> bool:
     # TODO: place model function call here
+    offset = 4
+    if filename[-4:].lower() == ".jpg":
+        pass
+    elif filename[-4:].lower() == ".nii":
+        pass
+    else:
+        st.error('File not found.')
+    
+    
     return True
 
 def load_file():
 
-    filename = get_path("(*.nii)|*.nii")
+    filename = get_path("(*.nii)|*.nii | (*.jpg)|*.jpg")
     
     try:
         with open(filename) as input:
@@ -52,4 +61,16 @@ if __name__ == '__main__':
 
 
 # %%
+filename = "picture.jpg"
+offset = 4
+#if filename[len(filename-3):len(filename)] == "*.jpg":
+if filename[-4:] == ".jpg":
+    print("True")
+else:
+    print("False")
+    print(filename[len(filename)-offset:len(filename)])
+    
 
+
+
+# %%
