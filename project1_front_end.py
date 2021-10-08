@@ -28,13 +28,11 @@ def run_model(filename) -> bool:
 
 def load_file():
 
-    filename = get_path("(*.txt)|*.txt")
+    filename = get_path("(*.nii)|*.nii")
     
     try:
         with open(filename) as input:
-            #st.text(input.read())
             st.text("File opened. Running model")
-
             has_tumor = run_model(filename)
             if has_tumor:
                 st.text("Tumor Positive")
