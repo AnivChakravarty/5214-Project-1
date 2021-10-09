@@ -2,7 +2,12 @@
 
 Initial Project members:  
 Team Lead: Casey Easter  
-Members: Aniv Chakravarty(AnivChakravarty), Casey Easter(caseyeaster39), Justin Roberts, Ryan Sterzenbach(Ryan10937), Tallon Coxe
+Members:   
+Aniv Chakravarty(AnivChakravarty)  
+Casey Easter(caseyeaster39)  
+Justin Roberts  
+Ryan Sterzenbach(Ryan10937)  
+Tallon Coxe
 
 DISCLAIMER:  
  #something about license or reference  
