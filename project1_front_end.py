@@ -1,14 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-# %%
-
-# %%
+import wx
+import os
 
 import streamlit as st
-import sys
-import easygui
-import wx
-#import cnn_model
+
+from v2.model_train.model_prod import load_model as model_2d
+
 
 def get_path(wildcard):
     app = wx.App(None)
@@ -23,54 +19,39 @@ def get_path(wildcard):
 
 
 def run_model(filename) -> bool:
-    # TODO: place model function call here
-    offset = 4
     if filename[-4:].lower() == ".jpg":
-        pass
+        print_result(model_2d(filename))
     elif filename[-4:].lower() == ".nii":
         pass
     else:
-        st.error('File not found.')
-    
-    
+        st.error('Model error.')
+
     return True
 
-def load_file():
 
+def load_file():
     filename = get_path("(*.nii)|*.nii | (*.jpg)|*.jpg")
-    
     try:
-        with open(filename) as input:
+        with open(filename):
             st.text("File opened. Running model")
             has_tumor = run_model(filename)
             if has_tumor:
                 st.text("Tumor Positive")
             else:
                 st.text("Tumor Negative")
-
     except FileNotFoundError:
         st.error('File not found.')
+
+
+def print_result(response):
+    print("Tumor Positive" if response else "Tumor Negative")
+
 
 def main():
     st.title("MRI Brain Tumor Detection")
     st.write("An app made in **Python** with **Jupyter**")
-    st.button("Open File Explorer", on_click = load_file)
+    st.button("Open File Explorer", on_click=load_file)
+
 
 if __name__ == '__main__':
     main()
-
-
-# %%
-filename = "picture.jpg"
-offset = 4
-#if filename[len(filename-3):len(filename)] == "*.jpg":
-if filename[-4:] == ".jpg":
-    print("True")
-else:
-    print("False")
-    print(filename[len(filename)-offset:len(filename)])
-    
-
-
-
-# %%
