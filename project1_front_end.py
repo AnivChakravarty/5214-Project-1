@@ -19,7 +19,7 @@ def get_path(wildcard):
     return path
 
 
-def run_model(filename) -> bool:
+def run_model(filename):
     st.text(os.getcwd())
     if filename.endswith(".jpg"):
         print_result(model_2d(filename))
@@ -27,7 +27,6 @@ def run_model(filename) -> bool:
         print_result(model_3d(filename))
     else:
         st.error('Wrong file extension.')
-    return True
 
 
 def load_file():
