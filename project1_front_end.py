@@ -1,5 +1,4 @@
 import wx
-import os
 
 import streamlit as st
 
@@ -8,7 +7,7 @@ from v1.model_train.model_prod import load_model as model_3d
 
 
 def get_path(wildcard):
-    app = wx.App(None)
+    _ = wx.App(None)
     style = wx.FD_OPEN | wx.FD_FILE_MUST_EXIST
     dialog = wx.FileDialog(None, 'Open', wildcard=wildcard, style=style)
     if dialog.ShowModal() == wx.ID_OK:
@@ -20,7 +19,6 @@ def get_path(wildcard):
 
 
 def run_model(filename):
-    st.text(os.getcwd())
     if filename.lower().endswith("jpg"):
         print_result(model_2d(filename))
     elif filename.lower().endswith("nii.gz"):
@@ -30,7 +28,7 @@ def run_model(filename):
 
 
 def load_file():
-    filename = get_path("(*.gz)|*.gz | (*.jpg)|*.jpg")
+    filename = get_path("*.*")
     try:
         with open(filename):
             st.text("File opened. Running model")
