@@ -35,17 +35,13 @@ def load_file():
     try:
         with open(filename):
             st.text("File opened. Running model")
-            has_tumor = run_model(filename)
-            if has_tumor:
-                st.text("Tumor Positive")
-            else:
-                st.text("Tumor Negative")
+            run_model(filename)
     except FileNotFoundError:
         st.error('File not found.')
 
 
 def print_result(response):
-    print("Tumor Positive" if response else "Tumor Negative")
+    st.text("Tumor Positive" if response else "Tumor Negative")
 
 
 def main():
