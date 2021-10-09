@@ -1,14 +1,14 @@
 import tensorflow as tf
 import numpy as np
 import nibabel as nib
-import os
 from scipy import ndimage
 
 # Reference: https://towardsdatascience.com/how-to-predict-an-image-with-keras-ca97d9cd4817
 
 
 def load_model(img_path):
-    model = tf.keras.models.load_model('saved_model')           # Load model
+    model = tf.keras.models.load_model('v1/model_train/saved_model')
+
     volume = nib.load(img_path)                                 # load nii image
     volume = volume.get_fdata()
     min_size = 0

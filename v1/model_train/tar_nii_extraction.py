@@ -15,12 +15,12 @@ def load_data():
     if not os.path.isdir("../../../project_data"):
         os.makedirs("../../../project_data", exist_ok=True)
 
-    path = os.path.abspath("../../archive")
+    path = os.path.abspath("../../../archive")
     for f in os.listdir(path):
         extract_file(os.path.join(path, f))
 
 
 def extract_file(f):
     tar = tarfile.open(f)
-    tar.extractall("../../project_data")
+    tar.extractall("../../../project_data")
     tar.close()

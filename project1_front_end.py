@@ -1,4 +1,5 @@
 import wx
+import os
 
 import streamlit as st
 
@@ -19,18 +20,18 @@ def get_path(wildcard):
 
 
 def run_model(filename) -> bool:
-    if filename[-4:].lower() == ".jpg":
+    st.text(os.getcwd())
+    if filename.endswith(".jpg"):
         print_result(model_2d(filename))
-    elif filename[-4:].lower() == ".nii":
+    elif filename.endswith(".nii.gz"):
         print_result(model_3d(filename))
     else:
         st.error('Model error.')
-
     return True
 
 
 def load_file():
-    filename = get_path("(*.nii)|*.nii | (*.jpg)|*.jpg")
+    filename = get_path("(*.gz)|*.gz | (*.jpg)|*.jpg")
     try:
         with open(filename):
             st.text("File opened. Running model")

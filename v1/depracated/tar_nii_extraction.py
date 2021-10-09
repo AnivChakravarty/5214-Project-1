@@ -12,10 +12,10 @@ import tarfile
 
 
 def load_data():
-    if not os.path.isdir("../../project_data"):
-        os.makedirs("../../project_data", exist_ok=True)
+    if not os.path.isdir("../../../project_data"):
+        os.makedirs("../../../project_data", exist_ok=True)
 
-    path = os.path.abspath("../../archive")
+    path = os.path.abspath("../../../archive")
     for f in os.listdir(path):
         extract_file(os.path.join(path, f))
 
