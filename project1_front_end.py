@@ -20,7 +20,6 @@ def get_path(wildcard):
 
 
 def run_model(filename):
-    st.text(os.getcwd())
     if filename.endswith(".jpg"):
         print_result(model_2d(filename))
     elif filename.endswith(".nii.gz"):
