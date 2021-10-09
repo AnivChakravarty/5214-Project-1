@@ -1,3 +1,5 @@
+import os
+
 import tensorflow as tf
 import numpy as np
 
@@ -8,7 +10,7 @@ from tensorflow.keras.applications.efficientnet import preprocess_input
 
 
 def load_model(img_path):
-    model = tf.keras.models.load_model('saved_model/my_model')          # Load model
+    model = tf.keras.models.load_model('v2/model_train/saved_model/my_model')
 
     img = image.load_img(img_path, target_size=(160, 160))              # Load image
     img_array = image.img_to_array(img)                                 # Batching single image
@@ -16,9 +18,8 @@ def load_model(img_path):
 
     img_preprocessed = preprocess_input(img_batch)                      # Preprocess
 
-    prediction = model.predict(img_preprocessed)                        # Predict and convert to 0 or 1
+    prediction = model.predict(img_preprocessed)                        # Predict
     prediction = tf.nn.softmax(prediction, axis=1)
     prediction = tf.math.reduce_max(prediction, axis=1)
 
-    # TODO: Verify predictions- not sure if the model always predicts True or if there are issues with the above code
-    return bool(int(prediction.numpy()[0]))
+    return bool(int(prediction.numpy()[0]))                             # Return 0 or 1
