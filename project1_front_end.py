@@ -26,7 +26,7 @@ def run_model(filename) -> bool:
     elif filename.endswith(".nii.gz"):
         print_result(model_3d(filename))
     else:
-        st.error('Model error.')
+        st.error('Wrong file extension.')
     return True
 
 
