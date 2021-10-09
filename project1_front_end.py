@@ -20,9 +20,10 @@ def get_path(wildcard):
 
 
 def run_model(filename):
-    if filename.endswith(".jpg"):
+    st.text(os.getcwd())
+    if filename.lower().endswith("jpg"):
         print_result(model_2d(filename))
-    elif filename.endswith(".nii.gz"):
+    elif filename.lower().endswith("nii.gz"):
         print_result(model_3d(filename))
     else:
         st.error('Wrong file extension.')
