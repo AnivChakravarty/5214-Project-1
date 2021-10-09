@@ -1,9 +1,9 @@
 import wx
-import os
 
 import streamlit as st
 
 from v2.model_train.model_prod import load_model as model_2d
+from v1.model_train.model_prod import load_model as model_3d
 
 
 def get_path(wildcard):
@@ -22,7 +22,7 @@ def run_model(filename) -> bool:
     if filename[-4:].lower() == ".jpg":
         print_result(model_2d(filename))
     elif filename[-4:].lower() == ".nii":
-        pass
+        print_result(model_3d(filename))
     else:
         st.error('Model error.')
 
